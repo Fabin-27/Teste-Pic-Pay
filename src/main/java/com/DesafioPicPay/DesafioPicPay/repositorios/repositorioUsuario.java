@@ -4,12 +4,14 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.DesafioPicPay.DesafioPicPay.dominio.usuarios.usuario;
+import com.DesafioPicPay.DesafioPicPay.dominio.usuarios.Usuario;
 
-public interface repositorioUsuario extends JpaRepository<usuario, Long>{
+public interface repositorioUsuario extends JpaRepository<Usuario, Long>{
 
-    Optional<usuario> acharUsuarioPorDocumento(String documento);
+   // Optional<Usuario> findUsuariobydocumento(String documento);
 
-    Optional<usuario> acharUsuarioPorId(Long id);
+    @SuppressWarnings("null")
+    Optional<Usuario> findById(Long id);
+
 
 }

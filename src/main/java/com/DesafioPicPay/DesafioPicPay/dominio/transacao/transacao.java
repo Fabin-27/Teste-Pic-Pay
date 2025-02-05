@@ -3,7 +3,7 @@ package com.DesafioPicPay.DesafioPicPay.dominio.transacao;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import com.DesafioPicPay.DesafioPicPay.dominio.usuarios.usuario;
+import com.DesafioPicPay.DesafioPicPay.dominio.usuarios.Usuario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +15,7 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "transacoes")
@@ -23,7 +24,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class transacao {
+public class Transacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,12 +34,16 @@ public class transacao {
 
     @ManyToOne
     @JoinColumn(name = "emissor_id")
-    private usuario emissor;
+    private Usuario emissor;
 
     @ManyToOne
     @JoinColumn(name = "receptor_id")
-    private usuario receptor;
+    private Usuario receptor;
 
     private LocalDateTime horario;
+
+    public Transacao(){
+
+    }
     
 }

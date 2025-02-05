@@ -1,6 +1,6 @@
 package com.DesafioPicPay.DesafioPicPay.dominio.usuarios;
 
-public enum tipoUsuario {
+public enum TipoUsuario {
 
     COMUM,
     LOJISTA
